@@ -6,9 +6,7 @@ import Footer from '../Footer/Footer';
 const ErrorPage = () => {
     return (
         <div>
-            <NavBar></NavBar>
             <img className='max-w-[900px] mx-auto p-50' src={ErrorImg} alt="" />
-            <Footer></Footer>
         </div>
     );
 };
