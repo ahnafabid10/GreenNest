@@ -1,0 +1,98 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://pixabay.com/photos/snake-plant-plant-plant-pot-5939187/",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 22,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Elegant white flowers and glossy leaves make this a perfect indoor companion.",
+    "image": "https://pixabay.com/photos/peace-lily-white-stamen-4751865/",
+    "providerName": "GreenAura"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 15,
+    "rating": 4.5,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "A fast-growing plant that removes toxins and adds freshness to your room.",
+    "image": "https://unsplash.com/photos/a-hand-holding-a-potted-plant-on-a-white-wall-RtH6rY9k738",
+    "providerName": "Leaf & Love"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 12,
+    "rating": 4.6,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A multipurpose plant known for its soothing gel and low maintenance.",
+    "image": "https://unsplash.com/photos/a-pair-of-hands-holding-up-two-potted-plants-nU9U66FMutc",
+    "providerName": "Nature's Basket"
+  },
+  {
+    "plantId": 5,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 25,
+    "rating": 4.9,
+    "availableStock": 6,
+    "careLevel": "Easy",
+    "description": "A strong and stylish indoor plant that tolerates neglect and low light.",
+    "image": "https://unsplash.com/photos/a-person-holding-a-potted-plant-in-their-hands-1gwjE0c3PSQ",
+    "providerName": "Plantify BD"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Monstera Deliciosa",
+    "category": "Tropical",
+    "price": 30,
+    "rating": 4.8,
+    "availableStock": 5,
+    "careLevel": "Medium",
+    "description": "Famous for its split leaves, this trendy plant loves bright, indirect light.",
+    "image": "https://unsplash.com/photos/green-plant-on-white-ceramic-pot-bwsTJMnhcwE",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Rubber Plant",
+    "category": "Foliage",
+    "price": 28,
+    "rating": 4.6,
+    "availableStock": 7,
+    "careLevel": "Medium",
+    "description": "Thick, glossy leaves and a bold appearance make it a favorite indoor tree.",
+    "image": "https://unsplash.com/photos/a-plant-in-a-pot-GNdLc38zNjU",
+    "providerName": "Leaf & Love"
+  },
+  {
+    "plantId": 8,
+    "plantName": "Areca Palm",
+    "category": "Tropical",
+    "price": 35,
+    "rating": 4.9,
+    "availableStock": 4,
+    "careLevel": "Hard",
+    "description": "A tall, elegant palm that brings a lush, tropical vibe to your home.",
+    "image": "https://unsplash.com/photos/green-plant-on-brown-wooden-table-AU5F441QvvQ",
+    "providerName": "GreenAura"
+  }
+]
