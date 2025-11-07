@@ -10,7 +10,7 @@ const TopRated = () => {
       .then(data => setPlants(data))
     }, [])
 
-    const top3Plants = plants.filter(p=> p.rating >=4.5).slice(0,3)
+    const top3Plants = plants.filter(p=> p.rating >=4).slice(0,4)
     console.log(top3Plants)
     
     return (
@@ -18,7 +18,7 @@ const TopRated = () => {
             <h2 className='text-4xl font-medium text-center py-10'>Top Rated Indoor Plants </h2>
             <div className='pb-20'>
         <div className='max-w-[1440px] mx-auto'>
-                <div className='justify-between gap-5 grid grid-cols-1 md:grid-cols-3'>
+                <div className='justify-between gap-5 grid grid-cols-1 md:grid-cols-4'>
                 {/* 01 */}
                 {
                     top3Plants.map((plants) =>(
