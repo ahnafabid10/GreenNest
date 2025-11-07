@@ -41,22 +41,33 @@ const PlantCareTips = () => {
   ];
 
   return (
-    <div className="py-10 bg-green-200">
-      <h2 className="text-4xl font-semibold text-center  text-green-700">Plant Care Tips</h2>
-    <div className="max-w-[1440px] mx-auto grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 py-10 px-4">
-        {tips.map((t) => (
-      <div className="bg-white rounded-2xl p-5">
-            <img
-              src={t.image}
-              alt=""
-              className="w-full h-40 object-cover rounded-xl mb-4"
-            />
-            <h3 className="text-xl font-semibold mb-2 text-green-600">{t.title}</h3>
-            <p className="text-gray-700 text-sm mb-3">{t.details}</p>
-            <p className="text-sm text-gray-500"><b>Type:</b> {t.type}</p>
-            <p className="text-sm text-gray-500"><b>Frequency:</b> {t.frequency}</p>
-      </div>
-        ))}
+            <div className='bg-green-200'>
+                <h2 className='text-4xl text-green-800 font-medium text-center py-10'>Plant Care Tips </h2>
+                <div className='pb-20'>
+            <div className='max-w-[1440px] mx-auto'>
+                    <div className='justify-between gap-5 grid grid-cols-1 md:grid-cols-4'>
+                    {
+                        tips.map((t) =>(
+                            <div className="card bg-green-50 max-w-[350px] object-cover p-3 shadow-sm">
+      <figure className="px-10 pt-10">
+    
+        <img
+        
+          src={t.image}
+          alt="Shoes"
+          className="rounded-xl w-full h-[300px]" />
+      </figure>
+      <div className="items-center w-[300px] text-black p-1 text-center">
+        <h2 className="text-xl text-green-800 font-bold py-3 text-center">{t.title}</h2>
+        <p className="font-medium text-gray-700 pb-3 text-left">{t.details}</p>
+        <p className=" pb-3 text-gray-500 text-left"><span className="font-bold">Type:</span> {t.type}</p>
+        <p className="text-gray-500 pb-3 text-left"><span className="font-bold">Frequency:</span> {t.frequency}</p>
+        
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

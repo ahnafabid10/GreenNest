@@ -41,7 +41,7 @@ const TopRated = () => {
     </div>
     <NavLink 
   to="/plantsDetails"
-  className="inline-block mt-5 px-6 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-green-500 to-lime-500 shadow-md hover:from-green-600 hover:to-lime-600 hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300"
+  className="inline-block mt-5 px-6 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-green-500 to-lime-500 shadow-md hover:from-green-600 hover:to-lime-600"
 >
   View Details
 </NavLink>

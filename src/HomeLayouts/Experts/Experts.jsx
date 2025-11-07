@@ -1,7 +1,7 @@
 import React from "react";
 
-const GreenExperts = () => {
-  const experts = [
+const Experts = () => {
+  const expertsTeam = [
     {
       id: 1,
       name: "Sophia Greenfield",
@@ -33,30 +33,34 @@ const GreenExperts = () => {
   ];
 
   return (
-    <div className="py-12 bg-white">
-      <h2 className="text-3xl font-semibold text-center text-green-700 mb-6">Meet Our Green Experts</h2>
-
-      <div className="max-w-[1440px] mx-auto grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 px-4">
-        {experts.map((expert)=>(
-
-          <div
-            className="bg-green-50 rounded-2xl p-5 text-center">
-
-            <img
-              src={expert.image}
-              alt=""
-              className="w-[300px] h-[300px] rounded-xl object-cover mb-4"/>
-
-            <h3 className="text-xl font-semibold text-green-700 mb-1">{expert.name}</h3>
-
-            <p className="text-sm text-green-600 font-medium mb-2">{expert.specialization}</p>
-
-            <p className="text-gray-600 text-sm">{expert.bio}</p>
+            <div className='bg-[#ffffff]'>
+                <h2 className='text-4xl text-green-800 font-medium text-center py-10'>Meet With Experts </h2>
+                <div className='pb-20'>
+            <div className='max-w-[1440px] mx-auto'>
+                    <div className='justify-between gap-5 grid grid-cols-1 md:grid-cols-4'>
+                    {
+                        expertsTeam.map((e) =>(
+                            <div className="card bg-green-50 max-w-[350px] object-cover p-3 shadow-sm">
+      <figure className="px-10 pt-10">
+    
+        <img
+        
+          src={e.image}
+          alt="Shoes"
+          className="rounded-xl w-full h-[300px]" />
+      </figure>
+      <div className="items-center w-full text-black text-center">
+        <h2 className="text-xl text-green-800 font-bold py-3 text-center">{e.name}</h2>
+        <p className="font-medium text-green-600 pb-3 text-center">{e.specialization}</p>
+        <p className="text-black pb-3 text-center">{e.bio}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default GreenExperts;
+export default Experts;

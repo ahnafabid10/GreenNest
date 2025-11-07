@@ -8,6 +8,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/module
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 
 const Slider = () => {
     return (
@@ -20,38 +21,31 @@ const Slider = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
+      {/* 1 */}
       <SwiperSlide>
         <img className='w-full h-[90vh] object-cover' src={img1} alt="" />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              Bring Home Serenity
-            </h1>
-            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">
-              Fill your home with calm, air-purifying plants that refresh your space and soul.
-            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Bring Home Serenity</h1>
+            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">Fill your home with calm, air-purifying plants that refresh your space and soul.</p>
           </div>
       </SwiperSlide>
+      {/* 2 */}
       <SwiperSlide>
         <img className='w-full h-[90vh] object-cover ' src={img2} alt="" />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              Grow a Greener You
-            </h1>
-            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">
-              Discover easy-care plants that thrive with your lifestyle — even on busy days.
-            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Grow a Greener You</h1>
+            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">Discover easy-care plants that thrive with your lifestyle — even on busy days.</p>
           </div>
       </SwiperSlide>
+
+      {/* 3 */}
+
       <SwiperSlide>
         <img className='w-full h-[90vh] object-cover' src={img3} alt="" />
          <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              Small Pots, Big Smiles
-            </h1>
-            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">
-              Bring charm to every corner with our tiny indoor plants made for cozy spaces.
-            </p>
-          </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Small Pots, Big Smiles</h1>
+            <p className="text-lg md:text-2xl max-w-2xl drop-shadow-md">Bring charm to every corner with our tiny indoor plants made for cozy spaces.</p>
+            </div>
       </SwiperSlide>
     </Swiper>
     );
