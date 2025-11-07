@@ -5,6 +5,7 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Root from "../Components/Root/Root";
 import Login from "../Authentication/Login/Login";
 import Registration from "../Authentication/Registration/Registration";
+import PrivateProvider from "../Provider/PrivateProvider";
 
 const router = createBrowserRouter(
     [
@@ -18,8 +19,10 @@ const router = createBrowserRouter(
             element: <Home></Home>
         },
         {
-            path: '/plants',
-            element:<Plants></Plants>
+            path: '/plantsDetails',
+            element:<PrivateProvider>
+                <Plants></Plants>
+            </PrivateProvider>
         },
         {
             path: '/auth/login',

@@ -3,13 +3,23 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 
 const NavBar = () => {
-  const {user} = use(AuthContext)
+  const {user, signOutUser} = use(AuthContext)
+
+  const handleSignOut =() =>{
+    signOutUser()
+    .then(
+      alert("Sign Out Successfully")
+    )
+    .catch(error =>{
+      console.log(error)
+    })
+  }
   
     const links = <>
     <div className='flex flex-col md:flex-row gap-5'>
     <NavLink to='/'>Home</NavLink>
-    <NavLink to='/plants'>Plants</NavLink>
-    <NavLink to='/myProfile'>My Profile</NavLink>
+    <NavLink to='/plantsDetails'>Plants</NavLink>
+    <NavLink to='/auth/login'>My Profile</NavLink>
     </div>
     
     </>
@@ -30,7 +40,7 @@ const NavBar = () => {
         }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">GreenNest</a>
+    <Link className="btn btn-ghost text-xl" to="/">GreenNest</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -41,7 +51,7 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
     {
-      user ? <div className='btn'>Sign Out</div> : <Link className="btn" to='/auth/login'>Sign In</Link>
+      user ? <div onClick={handleSignOut} className='btn'>Sign Out</div> : <Link className="btn" to='/auth/login'>Sign In</Link>
     }
     
   </div>
