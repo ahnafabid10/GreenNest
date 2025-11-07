@@ -2,8 +2,12 @@ import React from 'react';
 
 const MyProfile = () => {
     return (
-        <div>
-            
+        <div className=''>
+            <div className="avatar">
+  <div className="w-24 rounded-full">
+    <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+  </div>
+</div>
         </div>
     );
 };

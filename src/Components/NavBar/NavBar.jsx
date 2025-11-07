@@ -19,7 +19,7 @@ const NavBar = () => {
     <div className='flex flex-col md:flex-row gap-5'>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/plantsDetails'>Plants</NavLink>
-    <NavLink to='/auth/login'>My Profile</NavLink>
+    <NavLink to='/myProfile'>My Profile</NavLink>
     </div>
     
     </>
