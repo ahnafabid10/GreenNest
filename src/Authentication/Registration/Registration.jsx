@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../Provider/AuthContext';
 
 const Registration = () => {
+
+    const {createUser } = use(AuthContext)
+
+
+    const handleRegister =(event) =>{
+        event.preventDefault()
+        const name = event.target.name.value
+        const photo = event.target.photo.value
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        console.log(email, password, name, photo)
+
+        createUser(email,password, name, photo)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
+
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -9,7 +34,8 @@ const Registration = () => {
     <h2 className='font-bold text-4xl text-center py-5'>Register Your Account</h2>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
-        <fieldset className="fieldset">
+        <form onSubmit={handleRegister}>
+            <fieldset  className="fieldset">
             {/* Name */}
             <label className="label">Name</label>
           <input type="text" name='name' className="input" placeholder="Your Name" />
@@ -21,9 +47,11 @@ const Registration = () => {
           <input type="email" name='email' className="input" placeholder="Email" />
           {/* password */}
           <label className="label">Password</label>
-          <input type="password" className="input" placeholder="Password" />
-          <button className="btn btn-neutral mt-4">Register</button>
+          <input type="password" name='password' className="input" placeholder="Password" />
+          <button className="btn  btn-neutral mt-4">Register</button>
         </fieldset>
+        </form>
+        
         <div>
         <h2 className='text-center text-lg font-bold p-1'>or</h2>
     </div>
