@@ -1,7 +1,6 @@
 import React from "react";
 
 const PlantCareTips = () => {
-  // Static plant care tips (no fetch)
   const tips = [
     {
       id: 1,
@@ -44,30 +43,19 @@ const PlantCareTips = () => {
   return (
     <div className="py-10 bg-green-200">
       <h2 className="text-4xl font-semibold text-center  text-green-700">Plant Care Tips</h2>
-      <div className="max-w-[1440px] mx-auto grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 py-10 px-4">
-        {tips.map((tip) => (
-          <div
-            key={tip.id}
-            className="bg-white rounded-2xl p-5"
-          >
+    <div className="max-w-[1440px] mx-auto grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 py-10 px-4">
+        {tips.map((t) => (
+      <div className="bg-white rounded-2xl p-5">
             <img
-              src={tip.image}
+              src={t.image}
               alt=""
               className="w-full h-40 object-cover rounded-xl mb-4"
             />
-            <h3 className="text-xl font-semibold mb-2 text-green-600">
-              {tip.title}
-            </h3>
-            <p className="text-gray-700 text-sm mb-3">
-              {tip.details}
-            </p>
-            <p className="text-sm text-gray-500">
-              <b>Type:</b> {tip.type}
-            </p>
-            <p className="text-sm text-gray-500">
-              <b>Frequency:</b> {tip.frequency}
-            </p>
-          </div>
+            <h3 className="text-xl font-semibold mb-2 text-green-600">{t.title}</h3>
+            <p className="text-gray-700 text-sm mb-3">{t.details}</p>
+            <p className="text-sm text-gray-500"><b>Type:</b> {t.type}</p>
+            <p className="text-sm text-gray-500"><b>Frequency:</b> {t.frequency}</p>
+      </div>
         ))}
       </div>
     </div>

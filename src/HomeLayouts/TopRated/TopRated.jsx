@@ -22,7 +22,7 @@ const TopRated = () => {
                 {/* 01 */}
                 {
                     top3Plants.map((plants) =>(
-                        <div className="card bg-[#ffffff] max-w-[350px] p-3 shadow-sm">
+                        <div className="card bg-[#ffffff] max-w-[350px] object-cover p-3 shadow-sm">
   <figure className="px-10 pt-10">
 
     <img
@@ -31,8 +31,9 @@ const TopRated = () => {
       alt="Shoes"
       className="rounded-xl w-full h-[300px]" />
   </figure>
-  <div className="items-center text-black text-center">
+  <div className="items-center w-full text-black text-center">
     <h2 className="text-xl font-bold py-3 text-center">{plants.plantName}</h2>
+    <p className="text-black pb-3 text-center">{plants.description}</p>
     <div className="card-actions flex justify-between items-center">
       <p className="btn-primary ml-10 text-4xl font-bold">${plants.price}</p>
       <p className="border-2 flex items-center justify-center rounded-lg px-3 py-1 btn-primary mr-10"><FaStar/>{plants.rating}</p>
