@@ -31,7 +31,8 @@ const Login = () => {
 
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
-      Navigate(location?.state || '/')
+      alert('Sign In Successfully')
+      navigate(location?.state || '/')
     }
     return (
         <div>
@@ -40,7 +41,8 @@ const Login = () => {
     <h2 className='font-bold text-4xl text-center py-5'>Login Your Account</h2>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 ">
       <div className="card-body">
-        <fieldset onSubmit={handleSignIn} className="fieldset">
+        <form onSubmit={handleSignIn}>
+      <fieldset  className="fieldset">
             {/* Email */}
           <label className="label">Email</label>
           <input type="email" name='email' className="input" placeholder="Email" />
@@ -50,6 +52,8 @@ const Login = () => {
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
+        </form>
+        
         <div>
         <h2 className='text-center text-lg font-bold p-1'>or</h2>
     </div>
