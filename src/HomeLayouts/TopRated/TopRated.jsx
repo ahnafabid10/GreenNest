@@ -14,7 +14,7 @@ const TopRated = () => {
     console.log(top3Plants)
     
     return (
-        <div className='bg-green-950'>
+        <div className='bg-green-900'>
             <h2 className='text-4xl font-medium text-center py-10'>Top Rated Indoor Plants </h2>
             <div className='pb-20'>
         <div className='max-w-[1440px] mx-auto'>
@@ -22,7 +22,7 @@ const TopRated = () => {
                 {/* 01 */}
                 {
                     top3Plants.map((plants) =>(
-                        <div className="card bg-[#ffffff] w-[350px] p-3 shadow-sm">
+                        <div className="card bg-[#ffffff] max-w-[350px] p-3 shadow-sm">
   <figure className="px-10 pt-10">
 
     <img
