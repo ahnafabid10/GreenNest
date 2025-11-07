@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthContext';
 
 const NavBar = () => {
+  const {user} = use(AuthContext)
+  
     const links = <>
     <div className='flex flex-col md:flex-row gap-5'>
     <NavLink to='/'>Home</NavLink>
@@ -37,7 +40,10 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link className="btn" to='/auth/login'>Sign In</Link>
+    {
+      user ? <div className='btn'>Sign Out</div> : <Link className="btn" to='/auth/login'>Sign In</Link>
+    }
+    
   </div>
 </div>
     );
