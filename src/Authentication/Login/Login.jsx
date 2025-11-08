@@ -2,10 +2,12 @@ import React, { use, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState("")
 
 
   const handleShowPassword =(e)=>{
@@ -26,24 +28,27 @@ const Login = () => {
         const email = e.target.email.value
         const password = e.target.password.value
 
+        //reset
+        setError('')
+
         signInUser(email, password)
         .then(result =>{
             e.target.reset()
             navigate(location.state || '/')
-            alert('Sign In Successfully')
+            toast('Sign In Successfully')
             console.log(result.user)
         })
         .catch((error) => {
             console.log(error)
-    const errorCode = error.code;
+    // const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorCode, errorMessage)
+    setError( errorMessage)
   });
     }
 
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
-      alert('Sign In Successfully')
+     toast('Sign In Successfully')
       navigate(location.state || '/')
     }
 
@@ -51,13 +56,13 @@ const Login = () => {
       const email = emailRef.current.value
       forgetPassword(email)
       .then(() => {
-    alert(" Password reset email sent!")
+    toast(" Password reset email sent!")
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     // ..
-    alert(errorCode, errorMessage)
+    toast(errorCode, errorMessage)
   });
     }
 
@@ -82,6 +87,9 @@ const Login = () => {
           <div><a onClick={handleResetPassword} className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
+        {
+          error && <p className='text-red-600'>{error}</p> 
+        }
         </form>
         
         <div>
