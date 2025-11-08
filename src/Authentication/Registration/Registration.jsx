@@ -7,6 +7,8 @@ const Registration = () => {
 
     const {createUser, signInWithGoogle,updateUser, setUser,  } = use(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
+    const [error, setError] = useState("")
+    const [success, setSuccess] = useState(false)
 
       const handleShowPassword =(e)=>{
     e.preventDefault()
@@ -18,7 +20,7 @@ const Registration = () => {
 
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
-      alert('Register Successfully')
+      setSuccess(true)
       navigate('/')
     }
 
@@ -31,16 +33,37 @@ const Registration = () => {
 
         console.log(email, password, name, photo)
 
+        const length6Pattern = /^.{6,}$/;
+        const casePattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/
+
+        if(!length6Pattern.test(password)){
+          console.log("password didn't match")
+          setError('Password must be 6 character or longer')
+          return;
+        }
+
+        else if(!casePattern.test(password)){
+          setError('password must have at least one uppercase and one lower case character')
+          return;
+        }
+
+
+        // reset error & success
+        setError('')
+        setSuccess(false)
+
         createUser(email,password, name, photo)
         .then(result =>{
             const user = result.user
+            setSuccess(true)
+            event.target.reset()
             updateUser({displayName : name, photoURL: photo })
             .then(()=>{
                 setUser({...user, displayName : name, photoURL: photo } )
             })
             .catch(error =>{
                 console.log(error)
-                setUser(event.target)
+                setUser(event.target, error.massage, error.code)
             })
             console.log(result.user)
              navigate('/')
@@ -49,7 +72,7 @@ const Registration = () => {
             const errorCode =error.code
             const errorMassage = error.massage
             console.log(error)
-            alert(errorCode, errorMassage)
+            setError(errorCode, errorMassage)
         })
         return setUser({displayName : name, photoURL: photo })
     }
@@ -82,6 +105,12 @@ const Registration = () => {
                     </div>
           <button className="btn  btn-neutral mt-4">Register</button>
         </fieldset>
+        {
+          success && <p className='text-green-700'>Account created Successfully</p>
+        }
+        {
+          error && <p className='text-red-500'>{error}</p>
+        }
         </form>
         
         <div>

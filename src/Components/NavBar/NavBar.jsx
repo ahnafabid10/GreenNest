@@ -63,7 +63,7 @@ const NavBar = () => {
     <img className='w-[45px] border-2 border-green-900 rounded-full' src={user.photoURL} alt="" />
     </div>
   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box shadow-lg w-48 sm:w-56 p-2 z-[1] right-0 mt-2">
-  <li className="text-center  text-sm sm:text-base font-medium text-white mb-2">
+  <li className="text-center  text-sm sm:text-base font-medium text-green-900 mb-2">
     {user?.displayName}
   </li>
   <li>
