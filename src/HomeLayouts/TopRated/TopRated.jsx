@@ -10,7 +10,7 @@ const TopRated = () => {
       .then(data => setPlants(data))
     }, [])
 
-    const top3Plants = plants.filter(p=> p.rating >=4).slice(0,4)
+    const top3Plants = plants.filter(p=> p.rating >=4.8).slice(0,4)
     console.log(top3Plants)
     
     return (

@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useRef } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 
@@ -8,7 +8,9 @@ const Login = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-    const {signInUser, signInWithGoogle} = use(AuthContext)
+    const {signInUser, signInWithGoogle, forgetPassword} = use(AuthContext)
+
+    const emailRef = useRef()
 
     const handleSignIn = (e) =>{
         e.preventDefault()
@@ -35,6 +37,21 @@ const Login = () => {
       alert('Sign In Successfully')
       navigate(location.state || '/')
     }
+
+    const handleResetPassword = () =>{
+      const email = emailRef.current.value
+      forgetPassword(email)
+      .then(() => {
+    alert(" Password reset email sent!")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert(errorCode, errorMessage)
+  });
+    }
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -46,11 +63,11 @@ const Login = () => {
       <fieldset  className="fieldset">
             {/* Email */}
           <label className="label">Email</label>
-          <input type="email" name='email' className="input" placeholder="Email" />
+          <input ref={emailRef} type="email" name='email' className="input" placeholder="Email" />
           {/* password */}
           <label className="label">Password</label>
           <input type="password" name='password' className="input" placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <div><a onClick={handleResetPassword} className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
         </form>

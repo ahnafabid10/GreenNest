@@ -6,6 +6,7 @@
     "price": 18,
     "rating": 4.8,
     "availableStock": 10,
+    "sellCount": 72,
     "careLevel": "Easy",
     "description": "A hardy plant that purifies indoor air and thrives in low light.",
     "image": "https://i.ibb.co.com/nMfPgGnT/sarah-bronske-r-Gp-Z6-RKef-XU-unsplash.jpg",
@@ -21,7 +22,8 @@
     "careLevel": "Medium",
     "description": "Elegant white flowers and glossy leaves make this a perfect indoor companion.",
     "image": "https://i.ibb.co.com/rKsczbXm/feey-lmcz-Pem-Wj-QQ-unsplash.jpg",
-    "providerName": "GreenAura"
+    "providerName": "GreenAura",
+    "sellCount": 65
   },
   {
     "plantId": 3,
@@ -33,7 +35,8 @@
     "careLevel": "Easy",
     "description": "A fast-growing plant that removes toxins and adds freshness to your room.",
     "image": "https://i.ibb.co.com/xqScyybZ/3.jpg",
-    "providerName": "Leaf & Love"
+    "providerName": "Leaf & Love",
+    "sellCount": 54
   },
   {
     "plantId": 4,
@@ -45,7 +48,8 @@
     "careLevel": "Easy",
     "description": "A multipurpose plant known for its soothing gel and low maintenance.",
     "image": "https://i.ibb.co.com/hx9gRz1g/4.jpg",
-    "providerName": "Nature's Basket"
+    "providerName": "Nature's Basket",
+    "sellCount": 60
   },
   {
     "plantId": 5,
@@ -57,7 +61,8 @@
     "careLevel": "Easy",
     "description": "A strong and stylish indoor plant that tolerates neglect and low light.",
     "image": "https://i.ibb.co.com/TDZQYFMP/5.jpg",
-    "providerName": "Plantify BD"
+    "providerName": "Plantify BD",
+    "sellCount": 40
   },
   {
     "plantId": 6,
@@ -69,7 +74,8 @@
     "careLevel": "Medium",
     "description": "Famous for its split leaves, this trendy plant loves bright, indirect light.",
     "image": "https://i.ibb.co.com/0jYn7G1t/feey-bws-TJMnhcw-E-unsplash.jpg",
-    "providerName": "UrbanGreen Studio"
+    "providerName": "UrbanGreen Studio",
+    "sellCount": 140
   },
   {
     "plantId": 7,
@@ -81,7 +87,8 @@
     "careLevel": "Medium",
     "description": "Thick, glossy leaves and a bold appearance make it a favorite indoor tree.",
     "image": "https://i.ibb.co.com/FZTCBzx/denley-photography-GNd-Lc38z-Nj-U-unsplash.jpg",
-    "providerName": "Leaf & Love"
+    "providerName": "Leaf & Love",
+    "sellCount": 600
   },
   {
     "plantId": 8,
@@ -93,6 +100,7 @@
     "careLevel": "Hard",
     "description": "A tall, elegant palm that brings a lush, tropical vibe to your home.",
     "image": "https://i.ibb.co.com/qLkHbDkz/8.jpg",
-    "providerName": "GreenAura"
+    "providerName": "GreenAura",
+    "sellCount": 1401
   }
 ]
