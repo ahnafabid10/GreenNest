@@ -2,8 +2,8 @@
 
 ### **Assignment Category:** Assignment-09_category_daisy  
 
-🌿 **Live Link:** [Your Live Site Link Here]  
-💻 **GitHub Repository:** [Your GitHub Repo Link Here]  
+🌿 **Live Link:** https://greennesta9.netlify.app/
+💻 **GitHub Repository:** (https://github.com/ahnafabid10/GreenNest) 
 
 ---
 
