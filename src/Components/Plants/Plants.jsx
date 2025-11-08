@@ -50,9 +50,9 @@ const [loadData, setLoadData] = useState([])
         <form action="">
           <fieldset className='space-y-2'>
           <label className="text-green-900 label ">Name</label><br />
-          <input type="text" name='name' className="input" placeholder="Your Name" /><br />
+          <input type="text" name='name' className="input" placeholder="Your Name" required /><br />
           <label className="label text-green-900">Email</label><br />
-          <input type="email" name='email' className="input" placeholder="Email" /><br />
+          <input type="email" name='email' className="input" placeholder="Email" required/><br />
           <button onClick={handleAlert} className="text-white bg-gradient-to-r from-green-500 to-lime-500 shadow-md hover:from-green-600 hover:to-lime-600 p-3 rounded-2xl font-medium">Book Now</button>
           </fieldset>
         </form>

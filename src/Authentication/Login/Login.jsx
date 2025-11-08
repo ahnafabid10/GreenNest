@@ -35,8 +35,8 @@ const Login = () => {
         signInUser(email, password)
         .then(result =>{
             e.target.reset()
+            toast('Sign In Successfully')
             navigate(location.state || '/')
-            toast.success('Sign In Successfully')
             console.log(result.user)
         })
         .catch((error) => {
@@ -44,6 +44,7 @@ const Login = () => {
     // const errorCode = error.code;
     const errorMessage = error.message;
     setError( errorMessage)
+    toast("Something went wrong")
   });
     }
 
