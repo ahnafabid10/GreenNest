@@ -1,100 +1,71 @@
-// import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
-// const Plants = () => {
-//     return (
-//         <div>
-            
-//         </div>
-//     );
-// };
+const Plants = () => {
+const [loadData, setLoadData] = useState([])
+  useEffect(()=>{
+      fetch('/plants.json')
+      .then(res => res.json())
+      .then(data => setLoadData(data))
+  },[])
 
-// export default Plants;
-
-import React, { useState } from "react";
-import { useParams } from "react-router";
-// import { toast, ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
-// Example JSON data (in real app, fetch from plants.json)
-const plantsData = [
-  {
-    id: "1",
-    name: "Snake Plant",
-    description: "Great for indoor air purification.",
-    price: 25,
-    rating: 4.5,
-    stock: 10,
-    image: "https://i.ibb.co/album/SnakePlant.jpg"
-  },
-  {
-    id: "2",
-    name: "Aloe Vera",
-    description: "Easy to maintain, medicinal plant.",
-    price: 20,
-    rating: 4.2,
-    stock: 15,
-    image: "https://i.ibb.co/album/AloeVera.jpg"
+  const handleAlert = ()=>{
+    alert("Book Successfully")
   }
-];
+  
 
-const PlantDetails = () => {
-  const { id } = useParams();
-  const plant = plantsData.find(p => p.id === id);
-
-  const [formData, setFormData] = useState({ name: "", email: "" });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Booking Successful!");
-    setFormData({ name: "", email: "" });
-  };
-
-  if (!plant) return <div>Plant not found</div>;
-
-  return (
-    <div className="max-w-3xl mx-auto p-5">
-      <img src={plant.image} alt={plant.name} className="w-full h-96 object-cover rounded" />
-      <h2 className="text-3xl font-bold mt-5">{plant.plantName}</h2>
-      <p className="mt-2">{plant.description}</p>
-      <p className="mt-1">Price: ${plant.price}</p>
-      <p>Rating: {plant.rating} ⭐</p>
-      <p>Stock: {plant.stock}</p>
-
-      <div className="mt-5 p-5 border rounded">
-        <h3 className="text-xl font-semibold mb-3">Book Consultation</h3>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <input 
-            type="text" 
-            name="name" 
-            value={formData.name} 
-            onChange={handleChange} 
-            placeholder="Your Name" 
-            required 
-            className="border p-2 rounded"
-          />
-          <input 
-            type="email" 
-            name="email" 
-            value={formData.email} 
-            onChange={handleChange} 
-            placeholder="Your Email" 
-            required 
-            className="border p-2 rounded"
-          />
-          <button 
-            type="submit" 
-            className="bg-green-500 text-white p-2 rounded hover:bg-green-600"
-          >
-            Book Now
-          </button>
+    return (
+        <div className='bg-green-200'>
+          <div className="hero min-h-screen">         
+  <div className="hero-content my-20 grid grid-cols-1">
+    <div>
+        <h2 className='text-4xl font-bold m-5 text-center text-black'>All Plants</h2>
+            </div>
+    {
+      loadData.map(d=>(
+        <div className='bg-green-50 p-5 rounded-2xl flex items-center gap-10'>
+          <img
+      src={d.image}
+      className="w-[450px] rounded-lg shadow-2xl"
+    />
+    <div>
+      <h1 className="text-5xl text-green-900 font-bold">{d.plantName}</h1>
+      <p className="py-3 text-gray-700">
+        {d.description}
+      </p>
+      
+        <p className="py-3 text-3xl font-bold text-gray-700">
+        Price: ${d.price}
+      </p>
+      <p className="py-3 text-gray-700 flex items-center gap-2">Ratings: 
+        <FaStar></FaStar>{d.rating}
+      </p>
+      <button className="mb-5 text-gray-700">Available Stock: <span className='font-bold'>{d.availableStock}</span></button>
+      <br />
+      <div>
+        <h2 className='text-green-900 text-2xl font-medium space-y-2'>Book Consultation</h2>
+        <form action="">
+          <fieldset className='space-y-2'>
+          <label className="text-green-900 label ">Name</label><br />
+          <input type="text" name='name' className="input" placeholder="Your Name" /><br />
+          <label className="label text-green-900">Email</label><br />
+          <input type="email" name='email' className="input" placeholder="Email" /><br />
+          <button onClick={handleAlert} className="text-white bg-gradient-to-r from-green-500 to-lime-500 shadow-md hover:from-green-600 hover:to-lime-600 p-3 rounded-2xl font-medium">Book Now</button>
+          </fieldset>
         </form>
       </div>
     </div>
-  );
+        </div>
+
+      ))
+    }
+    
+  </div>
+</div>
+            
+        </div>
+    );
 };
 
-export default PlantDetails;
+export default Plants;
+

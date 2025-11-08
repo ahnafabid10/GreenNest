@@ -19,7 +19,7 @@ const NavBar = () => {
     <div className='flex flex-col md:flex-row gap-5'>
     <NavLink to='/'>Home</NavLink>
     <NavLink to='/plantsDetails'>Plants</NavLink>
-    <NavLink to='/auth/login'>My Profile</NavLink>
+    <NavLink to='/myProfile'>My Profile</NavLink>
     </div>
     
     </>
@@ -27,7 +27,7 @@ const NavBar = () => {
 
     return (
       <div>
-        <div className="navbar w-full mx-auto shadow-sm absolute top-0 left-0 z-50 bg-base-100">
+        <div className="navbar w-full mx-auto shadow-sm fixed top-0 left-0 z-50 bg-base-100">
           <div className='w-[1440px] mx-auto flex'>
               <div className="navbar-start">
     <div className="dropdown">
@@ -53,13 +53,17 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
     {
-      user ?  <section>
+      user 
+      
+      ? 
+
+       <section>
         <div className="dropdown">
   <div tabIndex={0} role="button" className=" m-1">
     <img className='w-[45px] border-2 border-green-900 rounded-full' src={user.photoURL} alt="" />
     </div>
   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box shadow-lg w-48 sm:w-56 p-2 z-[1] right-0 mt-2">
-  <li className="text-center text-sm sm:text-base font-medium text-gray-700 mb-2">
+  <li className="text-center  text-sm sm:text-base font-medium text-white mb-2">
     {user?.displayName}
   </li>
   <li>

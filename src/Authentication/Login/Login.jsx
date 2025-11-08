@@ -24,15 +24,16 @@ const Login = () => {
         })
         .catch((error) => {
             console.log(error)
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode, errorMessage)
   });
     }
 
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
       alert('Sign In Successfully')
-      navigate('/')
+      navigate(location.state || '/')
     }
     return (
         <div>

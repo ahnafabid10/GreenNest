@@ -1,12 +1,12 @@
 import React, { use } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link,  useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 
 const Registration = () => {
 
     const {createUser, signInWithGoogle,updateUser, setUser,  } = use(AuthContext)
 
-    const location = useLocation()
+    // const location = useLocation()
   const navigate = useNavigate()
 
     const handleSignInWithGoogle =() =>{
@@ -36,7 +36,7 @@ const Registration = () => {
                 setUser(event.target)
             })
             console.log(result.user)
-             navigate(location?.state || '/')
+             navigate('/')
         })
         .catch(error =>{
             const errorCode =error.code
