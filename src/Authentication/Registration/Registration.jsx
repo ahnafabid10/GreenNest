@@ -1,10 +1,17 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link,  useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Registration = () => {
 
     const {createUser, signInWithGoogle,updateUser, setUser,  } = use(AuthContext)
+    const [showPassword, setShowPassword] = useState(false)
+
+      const handleShowPassword =(e)=>{
+    e.preventDefault()
+  setShowPassword(!showPassword)
+  }
 
     // const location = useLocation()
   const navigate = useNavigate()
@@ -60,16 +67,19 @@ const Registration = () => {
             <fieldset  className="fieldset">
             {/* Name */}
             <label className="label">Name</label>
-          <input type="text" name='name' className="input" placeholder="Your Name" />
+          <input type="text" name='name' className="input" placeholder="Your Name" required/>
           {/* Photo URl */}
           <label className="label">Photo URL</label>
-          <input type="text" name='photo' className="input" placeholder="Photo URL" />
+          <input type="text" name='photo' className="input" placeholder="Photo URL" required />
             {/* Email */}
           <label className="label">Email</label>
-          <input type="email" name='email' className="input" placeholder="Email" />
+          <input type="email" name='email' className="input" placeholder="Email" required />
           {/* password */}
           <label className="label">Password</label>
-          <input type="password" name='password' className="input" placeholder="Password" />
+          <div className='flex items-center '>
+                      <input type={showPassword ? 'text' : 'password'} name='password' className="input" placeholder="Password" required/>
+                      <div onClick={handleShowPassword} className="btn btn-xs absolute right-12 ">{showPassword ?  <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</div>
+                    </div>
           <button className="btn  btn-neutral mt-4">Register</button>
         </fieldset>
         </form>

@@ -1,8 +1,17 @@
-import React, { use, useRef } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
+
+  const [showPassword, setShowPassword] = useState(false)
+
+
+  const handleShowPassword =(e)=>{
+    e.preventDefault()
+  setShowPassword(!showPassword)
+  }
 
 
   const location = useLocation()
@@ -63,10 +72,13 @@ const Login = () => {
       <fieldset  className="fieldset">
             {/* Email */}
           <label className="label">Email</label>
-          <input ref={emailRef} type="email" name='email' className="input" placeholder="Email" />
+          <input ref={emailRef} type="email" name='email' className="input" placeholder="Email"required />
           {/* password */}
           <label className="label">Password</label>
-          <input type="password" name='password' className="input" placeholder="Password" />
+          <div className='flex items-center '>
+            <input type={showPassword ? 'text' : 'password'} name='password' className="input" placeholder="Password" required/>
+            <div onClick={handleShowPassword} className="btn btn-xs absolute right-12 ">{showPassword ?  <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</div>
+          </div>
           <div><a onClick={handleResetPassword} className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
