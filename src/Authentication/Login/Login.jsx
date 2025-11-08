@@ -2,7 +2,8 @@ import React, { use, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Login = () => {
 
@@ -35,7 +36,7 @@ const Login = () => {
         .then(result =>{
             e.target.reset()
             navigate(location.state || '/')
-            toast('Sign In Successfully')
+            toast.success('Sign In Successfully')
             console.log(result.user)
         })
         .catch((error) => {
@@ -109,7 +110,7 @@ const Login = () => {
   </div>
  
 </div>
-
+<ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Provider/AuthContext';
+import PrivateProvider from '../../Provider/PrivateProvider';
 
 const MyProfile = () => {
     const {user,} = use(AuthContext)
@@ -25,7 +26,10 @@ const MyProfile = () => {
 
         </div>
         :
-        <NavLink to='/auth.login'>My Profile</NavLink>
+        <PrivateProvider>
+          <NavLink to='/myProfile'>My Profile</NavLink>
+        </PrivateProvider>
+        
         }
         
       </div>

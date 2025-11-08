@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Plants = () => {
 const [loadData, setLoadData] = useState([])
@@ -9,8 +11,9 @@ const [loadData, setLoadData] = useState([])
       .then(data => setLoadData(data))
   },[])
 
-  const handleAlert = ()=>{
-    alert("Book Successfully")
+  const handleAlert = (e)=>{
+    e.preventDefault()
+    toast("Book Successfully")
   }
   
 
@@ -62,7 +65,7 @@ const [loadData, setLoadData] = useState([])
     
   </div>
 </div>
-            
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

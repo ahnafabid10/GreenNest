@@ -3,6 +3,7 @@ import { Link,  useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
+
 const Registration = () => {
 
     const {createUser, signInWithGoogle,updateUser, setUser,  } = use(AuthContext)
