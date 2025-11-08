@@ -12,7 +12,7 @@ const Registration = () => {
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
       alert('Register Successfully')
-      navigate(location?.state || '/')
+      navigate('/')
     }
 
     const handleRegister =(event) =>{

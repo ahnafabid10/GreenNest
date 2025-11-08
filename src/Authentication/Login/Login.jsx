@@ -32,7 +32,7 @@ const Login = () => {
     const handleSignInWithGoogle =() =>{
       signInWithGoogle()
       alert('Sign In Successfully')
-      navigate(location?.state || '/')
+      navigate('/')
     }
     return (
         <div>

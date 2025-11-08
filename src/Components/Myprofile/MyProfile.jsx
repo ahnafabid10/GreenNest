@@ -2,7 +2,8 @@ import React, { use } from 'react';
 import { AuthContext } from '../../Provider/AuthContext';
 
 const MyProfile = () => {
-    const {user} = use(AuthContext)
+    const {user,} = use(AuthContext)
+
     return (
         <div className=''>
 <h3><span className='font-bold'>Name:</span> <span>{user && user.displayName }</span></h3>
@@ -12,6 +13,9 @@ const MyProfile = () => {
     <img src={user.photoURL} />
   </div>
 </div>
+
+
+
 
         </div>
     );
