@@ -1,16 +1,14 @@
 # 🍃 GreenNest – Indoor Plant Care & Store  
-
-### **Assignment Category:** Assignment-09_category_daisy  
-
-🌿 **Live Link:** https://greennesta9.netlify.app/
-💻 **GitHub Repository:** (https://github.com/ahnafabid10/GreenNest) 
-
 ---
 
 ## 🌱 Project Overview  
 
 **GreenNest** is a single-page web application built for plant lovers who want to nurture and decorate their homes with beautiful indoor plants.  
 The platform allows users to explore plant care guides, browse and buy plants, and book expert consultations — ensuring a greener and healthier lifestyle for everyone.  
+
+
+🌿 **Live Link:** https://greennesta9.netlify.app/<br>
+💻 **GitHub Repository:** (https://github.com/ahnafabid10/GreenNest) 
 
 ---
 
@@ -63,121 +61,122 @@ A `plants.json` file contains at least **6 indoor plant objects** with the follo
   "providerName": "UrbanGreen Studio",
   "sellCount": 250
 }
+```
 
 
-3. Home Page Sections
-🌿 Hero Section
+### 3. Home Page Sections
+## 🌿 Hero Section
 
 Swiper.js or Framer Motion slider with plant-themed visuals and captions.
 
-🌸 Top Rated Indoor Plants
+## 🌸 Top Rated Indoor Plants
 
-Dynamically displayed from JSON.
+- Dynamically displayed from JSON.
 
-Each card includes image, name, price, rating, and “View Details” button.
+- Each card includes image, name, price, rating, and “View Details” button.
 
-🌞 Plant Care Tips
+## 🌞 Plant Care Tips
 
-Static/fake JSON data about watering, sunlight, and fertilizing tips.
+- Static/fake JSON data about watering, sunlight, and fertilizing tips.
 
-👩‍🌾 Meet Our Green Experts
+## 👩‍🌾 Meet Our Green Experts
 
-3–4 plant experts with photo, name, and specialization.
+- 3–4 plant experts with photo, name, and specialization.
 
-🌼 Extra Creative Section
+## 🌼 Extra Creative Section
 
-“Plant of the Week” — featuring a highlighted plant each week.
+- “Plant of the Week” — featuring a highlighted plant each week.
 (Bonus for creativity!)
 
-4. Plant Details Page (Protected Route)
+### 4. Plant Details Page (Protected Route)
 
-🔒 Authentication Required
+## 🔒 Authentication Required
 If user isn’t logged in → redirect to Login page, then return to the intended details page after login.
 
 Includes:
 
-Large plant image, name, description, price, rating, stock info.
+- Large plant image, name, description, price, rating, stock info.
 
-Book Consultation Form:
+- Book Consultation Form:
 
-Fields: Name, Email
+- Fields: Name, Email
 
-Button: “Book Now” → shows success toast + clears form.
+- Button: “Book Now” → shows success toast + clears form.
 
-5. Authentication Features (Firebase)
-🔐 Login Page
+### 5. Authentication Features (Firebase)
+## 🔐 Login Page
 
-Fields: Email, Password
+- Fields: Email, Password
 
-Options: Forgot Password | Login Button
+- Options: Forgot Password | Login Button
 
 Navigation:
 
-On success → navigate to desired route/home.
+- On success → navigate to desired route/home.
 
-On failure → show toast/error message.
+- On failure → show toast/error message.
 
 Extra:
 
-Link to Signup Page
+- Link to Signup Page
 
-Google Sign-In button → login via Google, then redirect home.
+- Google Sign-In button → login via Google, then redirect home.
 
-🪴 Signup Page
+## 🪴 Signup Page
 
 Fields: Name, Email, Photo URL, Password
 
 Validation Rules:
 
-✅ Must contain one uppercase letter
+- Must contain one uppercase letter
 
-✅ Must contain one lowercase letter
+- Must contain one lowercase letter
 
-✅ Must be at least 6 characters long
+- Must be at least 6 characters long
 
-Invalid passwords show an inline error message and block registration.
+- Invalid passwords show an inline error message and block registration.
 
-On success → navigate to Home page.
+- On success → navigate to Home page.
 
 Extra:
 
-Link to Login Page
+- Link to Login Page
 
-Google Sign-In option → redirect to Home page.
+- Google Sign-In option → redirect to Home page.
 
-⚠️ Note: Email verification not implemented (per assignment guideline).
+⚠️ Note: Email verification not implemented.
 
-6. My Profile Page
+## 6. My Profile Page
 
-Displays the current user’s:
+### Displays the current user’s:
 
-Name
+- Name
 
-Email
+- Email
 
-Profile Photo
+- Profile Photo
 
 Includes an Update Profile button — uses updateProfile() to update displayName and photoURL in real-time.
 
-💡 Bonus & Creative Additions
+##💡 Bonus & Creative Additions
 
-Password toggle (Show/Hide) on both Login & Signup.
+- Password toggle (Show/Hide) on both Login & Signup.
 
-“Forgot Password” with Gmail password reset link.
+- “Forgot Password” with Gmail password reset link.
 
-Smooth animations using Framer Motion.
+- Smooth animations using Framer Motion.
 
-Additional section: “Plant of the Week” or “Best Sellers”.
+- Additional section: “Plant of the Week” or “Best Sellers”.
 
-🧪 Challenges Overcome
+## 🧪 Challenges Overcome
 
-Implemented updateProfile() for real-time user updates.
+- Implemented updateProfile() for real-time user updates.
 
-Managed protected routes & redirection after login.
+- Managed protected routes & redirection after login.
 
-Password validation + custom error messages.
+- Password validation + custom error messages.
 
-Integrated Swiper.js for responsive slider layout.
+- Integrated Swiper.js for responsive slider layout.
 
 
 | Category          | Tools / Libraries                             |
@@ -188,3 +187,32 @@ Integrated Swiper.js for responsive slider layout.
 | **Data**          | Local JSON (plants.json)                      |
 | **Icons**         | React Icons                                   |
 | **Notifications** | React Hot Toast / SweetAlert                  |
+
+
+## Installation
+  ```bash
+  # Clone the repository
+git clone https://github.com/ahnafabid10/GreenNest.git
+
+# Navigate into the project directory
+cd GreenNest
+
+# Install dependencies
+npm install
+
+# Create a `.env` file in the root directory
+# Add your Firebase
+VITE_apiKey=your_api_key
+VITE_authDomain=your_auth_domain
+VITE_projectId=your_project_id
+VITE_storageBucket=your_storageBucket
+VITE_messagingSenderId= your_messagingSenderId
+VITE_appId= your_appId
+
+# Run the development server
+npm run dev
+
+# Build and preview production version
+npm run build
+npm run preview
+```
